@@ -51,7 +51,7 @@ pipeline:
       func: pyxel.models.photon_collection.load_image
       enabled: true
       arguments:
-        image_file: section1.fits
+        image_file: FITS/section1.fits
         convert_to_photons: true
         bit_resolution: 16
         align: "center"
