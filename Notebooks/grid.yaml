@@ -11,7 +11,7 @@
 exposure:
 
   readout:
-    times: [1., 5., 7.]
+    times: [1., 5., 7.,1000.]  # s
     non_destructive:  false
 
   outputs:
@@ -26,8 +26,8 @@ ccd_detector:
 
   geometry:
 
-    row: 450                # pixel
-    col: 450                # pixel
+    row: 2000               # pixel
+    col: 2000                # pixel
     total_thickness: 40.    # um
     pixel_vert_size: 10.    # um
     pixel_horz_size: 10.    # um
