@@ -87,7 +87,7 @@ pipeline:
         particles_per_second: 100
         incident_angles:
         starting_position:
-        spectrum_file: 'shielding.txt'
+        spectrum_file: '/Users/wasi/SIP/shielding.txt'
         seed: 4321
         progressbar: true
 
