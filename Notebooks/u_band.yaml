@@ -11,7 +11,7 @@
 exposure:
 
   readout:
-    times: [1., 5., 7.]
+    times: [1., 10., 60.]
     non_destructive:  false
 
   outputs:
@@ -34,7 +34,7 @@ cmos_detector:
     pixel_scale: 0.01       # arcsec/pixel
 
   environment:
-    temperature: 300        # K
+    temperature: 200        # K
 
   characteristics:
     quantum_efficiency: 1.                 # -
@@ -55,6 +55,7 @@ pipeline:
         convert_to_photons: true
         bit_resolution: 16
         align: "center"
+        multiplier: 20.0
 
     - name: shot_noise
       func: pyxel.models.photon_collection.shot_noise
@@ -65,6 +66,14 @@ pipeline:
     - name: photoelectrons
       func: pyxel.models.charge_generation.simple_conversion
       enabled: true
+    - name: dark_current
+      func: pyxel.models.charge_generation.dark_current
+      enabled: true
+      arguments:
+        figure_of_merit: 1.  # nA/cm^2
+        spatial_noise_factor: 0.1 #typically between 0.1 and 0.4
+        temporal_noise: true
+
       
     - name: cosmix
       func: pyxel.models.charge_generation.cosmix
@@ -88,7 +97,7 @@ pipeline:
       enabled: true
     - name: simple_ipc
       func: pyxel.models.charge_collection.simple_ipc
-      enabled: true
+      enabled: false
       arguments:
           coupling: 0.1
           diagonal_coupling: 0.05
