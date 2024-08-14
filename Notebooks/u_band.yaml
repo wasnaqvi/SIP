@@ -54,8 +54,8 @@ pipeline:
         image_file: test.fits
         convert_to_photons: true
         bit_resolution: 16
-        align: "center"
-        multiplier: 20.0
+        align: "top_right"
+        multiplier: 100
 
     - name: shot_noise
       func: pyxel.models.photon_collection.shot_noise
