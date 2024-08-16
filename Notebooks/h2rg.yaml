@@ -11,7 +11,7 @@
 exposure:
 
   readout:
-    times: [1., 5., 7.]
+    times: [1., 100., 200.]
     non_destructive:  false
 
   outputs:
