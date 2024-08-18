@@ -77,7 +77,7 @@ pipeline:
       
     - name: cosmix
       func: pyxel.models.charge_generation.cosmix
-      enabled: false
+      enabled: true
       arguments:
         simulation_mode: cosmic_ray
         running_mode: stepsize
